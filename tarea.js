@@ -2,13 +2,15 @@
 // Función sumArray: Suma de todos los elementos de un array
 // Parámetros: array (Array) - Un array de números
 // Devuelve: Number - La suma de todos los elementos del array
-const sumArray = (numero1,numero2) => {
+let numeros = [23,56,79,400,100]
+const sumArray = numeros.reduce((numero1,numero2)=> {
     suma = numero1+numero2;
-  };
+  });
   
   // Función filterEvenNumbers: Filtrar números pares de un array
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con solo los números pares del array original
+  const filtro =["ferrari 488 spider","mclaren","lamborgini"," ferrari la ferrari","jesko","porche gt3rs"]
   const filterEvenNumbers = () => {
     
   };
