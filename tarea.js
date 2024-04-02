@@ -78,7 +78,7 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
   // Parámetros: array (Array) - Un array de elementos
   // Devuelve: Number - La cantidad de elementos en el array
   const countElements = (numeros) => {
-    tamaño = numeros.length();
+    let tamaño = numeros.length();
     return tamaño
   };
   console.log(countElements);
@@ -88,16 +88,20 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
   // - array1 (Array) - El primer array a concatenar
   // - array2 (Array) - El segundo array a concatenar
   // Devuelve: Array - Un nuevo array que es la concatenación de los dos arrays proporcionados
-  const concatenateArrays = () => {
-    
+  const concatenateArrays = (numeros,cadena) => {
+    let array= numeros.concat(cadena);
+    return array;
   };
+  console.log(array);
   
   // Función squareNumbers: Calcular el cuadrado de cada número en un array
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con los cuadrados de los números en el array original
-  const squareNumbers = () => {
-    
+  const squareNumbers = (numeros) => {
+    let cuadrado= numeros.map( num = numero^2)
+    return cuadrado;
   };
+  console.log(squareNumbers);
 
   // Función flecha para agregar habilidades a un jugador de un juego
 const agregarHabilidad = (jugador, nuevaHabilidad) => {
@@ -114,7 +118,18 @@ const agregarHabilidad = (jugador, nuevaHabilidad) => {
     Valor de retorno:
     Retorna el objeto jugador modificado con la nueva habilidad agregada.
     */
-    
+    if (!jugador.habilidades) {
+        jugador.habilidades = [];
+    }
+
+    // Verifica si la nueva habilidad ya existe en el arreglo de habilidades
+    if (!jugador.habilidades.includes(nuevaHabilidad)) {
+        // Agrega la nueva habilidad al arreglo de habilidades del jugador
+        jugador.habilidades.push(nuevaHabilidad);
+    }
+
+    // Retorna el objeto jugador modificado con la nueva habilidad agregada
+    return jugador;
    
 };
 
@@ -123,9 +138,24 @@ const agregarHabilidad = (jugador, nuevaHabilidad) => {
 // - peliculas: Array de objetos que representan películas, cada objeto tiene propiedades como 'titulo' y 'duracion'.
 // Retorna:
 // - Un número que representa la duración total de todas las películas en minutos.
+let duraciontotal = 0;
+const peliculas= [
+    {titulo: "El Rey León",duracion: 118,genero:"animacion",puntaje:5,año:"1994"},
+    {titulo: "La Sirenita",duracion: 83,genero:"animacion",puntaje:4,año:"1995"},
+    { titulo: "Toy Story", duracion: 81,genero:"animacion",puntaje:4,año:"1989"},
+    {titulo: "Frozen",duracion: 102,genero:"animacion",puntaje:3,año:"2013"},
+    {titulo: "Moana",duracion: 107,genero:"animacion",puntaje:5,año:"2016"}
+];
 const calcularDuracionTotal = (peliculas) => {
+    peliculas.forEach(pelicula => {
+        // Sumar la duración de cada película a la duración total
+        duracionTotal += pelicula.duracion;
+    });
     
+    // Retornar la duración total
+    return duracionTotal;
 };
+console.log(calcularDuracionTotal);
 
 
 // Función para buscar películas por título y género.
@@ -136,8 +166,12 @@ const calcularDuracionTotal = (peliculas) => {
 // Retorna:
 // - Un array de objetos que representan películas que coinciden con el título y el género especificados.
 const buscarPeliculas = (peliculas, titulo, genero) => {
-    
+    peliculas.filter(pelicula => {
+        pelicula.titulo.includes(titulo.toLowerCase()) && pelicula.genero.toLowerCase("animacion") === genero.toLowerCase("animacion");
+    })
+    return
 };
+console.log(buscarPeliculas);
 
 // Función para calcular el promedio de puntajes de las películas.
 // Parámetros:
@@ -145,8 +179,10 @@ const buscarPeliculas = (peliculas, titulo, genero) => {
 // Retorna:
 // - Un número que representa el promedio de puntajes de todas las películas.
 const calcularPromedioPuntajes = (peliculas) => {
-   
+    let prom=peliculas.puntaje.reduce(acu+val)/2;
+   return prom;
 };
+console.log(prom);
 
 // Función para filtrar películas por año de lanzamiento.
 // Parámetros:
@@ -156,8 +192,10 @@ const calcularPromedioPuntajes = (peliculas) => {
 // - Un array de objetos que representan películas lanzadas en el año especificado.
 const filtrarPorAño = (peliculas, año) => {
     // Filtrar las películas por año de lanzamiento.
-    
+    let año = peliculas.año.filter("20")
+    return año;
 };
+console.log(filtrarPorAño);
 
 // Función para calcular el promedio de duración de las películas por género.
 // Parámetros:
@@ -167,9 +205,12 @@ const filtrarPorAño = (peliculas, año) => {
 // - Un número que representa el promedio de duración de las películas del género especificado.
 const calcularPromedioDuracionPorGenero = (peliculas, genero) => {
     // Filtrar las películas por género.
-    
+    let gene = peliculas.filter(genero.toLowerCase(animacion)===genero.toLowerCase("animacion"));
+    let sum = gene.reduce(acu+val);
+    let prom = sum/peliculas.gene.length();
+    return prom;    
 };
-
+console.log(calcularPromedioDuracionPorGenero);
 
 // Clase base que representa un vehículo
 class Vehiculo {
@@ -179,14 +220,18 @@ class Vehiculo {
      * @param {string} modelo - El modelo del vehículo.
      * @param {number} año - El año de fabricación del vehículo.
      */
-   
+    constructor(marca,modelo,año){
+        this.marca = "nissan";
+        this.modelo = "gtr-35";
+        this.año = 2019;
+    };
 
     /**
      * Método para obtener la información del vehículo.
      * @returns {string} - La información del vehículo en formato de cadena de texto.
      */
     obtenerInformacion() {
-        
+        return console.log("el vehiculo es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año)
     }
 }
 
@@ -205,14 +250,26 @@ class Automovil extends Vehiculo {
      * @param {number} numAsientos - El número de asientos del automóvil.
      * @param {string} tipoTransmision - El tipo de transmisión del automóvil.
      */
-    
+    constructor(marca,modelo,año,color,cilindrada,potencia,numPuertas,numAsientos,tipoTransmision){
+        this.marca="nissan";
+        this.modelo="gtr-35";
+        this.año=2019;
+        this.color="color";
+        this.cilindrada=3000;
+        this.potencia=350;
+        this.numPuertas=2;
+        this.numAsientos=2;
+        this.tipoTransmision="automatica";
+    }
 
     /**
      * Método para obtener la información del automóvil.
      * @returns {string} - La información del automóvil en formato de cadena de texto.
      */
     obtenerInformacion() {
-        
+        console.log("el vehiculo es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
+        this.color+",nuumero de puertas "+this.numPuertas+" cantidad de asientos"+this.numAsientos+" con una cilindrada de "+this.cilindrada+
+        " con una potencia de "+ this.potencia+" con el tipo de transmision"+this.tipoTransmision);
     }
 }
 
@@ -229,14 +286,25 @@ class Motocicleta extends Vehiculo {
      * @param {number} numRuedas - El número de ruedas de la motocicleta.
      * @param {string} tipo - El tipo de motocicleta (deportiva, touring, etc.).
      */
-    
+    constructor(marca,modelo,año,color,cilindrada,potencia,numRuedas,tipo){
+        this.modelo="s1000rr";
+        this.año=2023;
+        this.color="blanca";
+        this.marca="bmw";
+        this.numRuedas=2;
+        this.tipo="deportiva";
+        this.cilindrada=1000;
+        this.potencia=205;
+    }
 
     /**
      * Método para obtener la información de la motocicleta.
      * @returns {string} - La información de la motocicleta en formato de cadena de texto.
      */
     obtenerInformacion() {
-       
+        console.log("la moto es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
+        this.color+",nuumero de puertas "+this.numPuertas+" cantidad de asientos"+this.numAsientos+" con una cilindrada de "+this.cilindrada+
+        " con una potencia de "+ this.potencia+" con el tipo de transmision"+this.tipoTransmision);
     }
 }
 
