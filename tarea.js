@@ -43,15 +43,21 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
   // Función calculateAverage: Calcular el promedio de un array de números
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Number - El promedio de los números en el array
-  const calculateAverage = () => {
+  const calculateAverage = (numeros) => {
+    if (numeros.length === 0) {
+        return 0;
+      }
     
-  };
+      const sum = numeros.reduce((acc, val) => acc + val, 0);
+      return sum / numeros.length;
+    };
+  
   
   // Función sortNumbersAscending: Ordenar un array de números de forma ascendente
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con los números ordenados de forma ascendente
   const sortNumbersAscending = (numeros) => {
-    
+    return numeros.slice().sort((a, b) => a - b);
   };
   
   // Función findFirstElement: Encontrar el primer elemento que cumple una condición en un array
@@ -59,17 +65,24 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
   // - array (Array) - Un array de elementos
   // - condition (Function) - Una función de condición que devuelve true o false
   // Devuelve: Any - El primer elemento que cumple con la condición, o undefined si ninguno lo hace
-  const findFirstElement = () => {
-    
+  const findFirstElement = (numeros) => {
+    for (let element of numeros) {
+        if (condition(element)) {
+          return element;
+        }
+      }
+      return undefined;
   };
   
   // Función countElements: Contar la cantidad de elementos en un array
   // Parámetros: array (Array) - Un array de elementos
   // Devuelve: Number - La cantidad de elementos en el array
-  const countElements = () => {
-    
+  const countElements = (numeros) => {
+    tamaño = numeros.length();
+    return tamaño
   };
-  
+  console.log(countElements);
+
   // Función concatenateArrays: Concatenar dos arrays
   // Parámetros: 
   // - array1 (Array) - El primer array a concatenar
