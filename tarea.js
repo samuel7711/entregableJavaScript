@@ -304,7 +304,7 @@ class Motocicleta extends Vehiculo {
     obtenerInformacion() {
         console.log("la moto es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
         this.color+",nuumero de puertas "+this.numPuertas+" cantidad de asientos"+this.numAsientos+" con una cilindrada de "+this.cilindrada+
-        " con una potencia de "+ this.potencia+" con el tipo de transmision"+this.tipoTransmision);
+        " con una potencia de "+ this.potencia+" es un vehiculo con "+this.numRuedas+" ruedas");
     }
 }
 
@@ -322,14 +322,24 @@ class Camion extends Vehiculo {
      * @param {number} capacidadCarga - La capacidad de carga del camión en toneladas.
      * @param {string} tipoCarroceria - El tipo de carrocería del camión (remolque, furgón, etc.).
      */
-    
+    constructor(marca,modelo,año,color,cilindrada,potencia,numEjes,capacidadCarga,tipoCarroceria){
+        super(marca,modelo,año);
+        this.color="blanco";
+        this.cilindrada=4000;
+        this.pontencia=400;
+        this.numEjes=8;
+        this.capacidadCarga=2000;
+        this.tipoCarroceria="metal";
+    }
 
     /**
      * Método para obtener la información del camión.
      * @returns {string} - La información del camión en formato de cadena de texto.
      */
     obtenerInformacion() {
-        
+        console.log("el vehiculo es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
+        this.color+",es de carroceria "+this.tipoCarroceria+" tiene una cantidad de "+this.numEjes+" ejes,con una cilindrada de "+this.cilindrada+
+        " con una potencia de "+ this.potencia+" tiene una capacidad de carga de "+this.capacidadCarga);
     }
 }
 
@@ -347,14 +357,24 @@ class Autobus extends Vehiculo {
      * @param {string} tipoCombustible - El tipo de combustible del autobús.
      * @param {string} tipoMotor - El tipo de motor del autobús (diésel, gasolina, eléctrico, etc.).
      */
-   
+    constructor(marca,modela,año,color,cilindrada,potencia,capacidadPasajeros,tipoCombustible,tipoMotor){
+        super(marca,modelo,año);
+        this.color="rojo";
+        this.cilindrada =3000;
+        this.potencia=300;
+        this.capacidadPasajeros= 30;
+        this.tipoCombustible="acpm";
+        this.tipoMotor="v10";
+    }
 
     /**
      * Método para obtener la información del autobús.
      * @returns {string} - La información del autobús en formato de cadena de texto.
      */
     obtenerInformacion() {
-        
+        console.log("el autobus es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como el color que es "+
+        this.color+" con una cilindrada de "+this.cilindrada+" con una potencia de "+ this.potencia+" con el tipo de combustible"+this.tipoCombustible+" un motor "+this.tipoMotor+
+        " con la capacidad de pasajeros de "+ this.capacidadPasajeros);
     }
 }
 
