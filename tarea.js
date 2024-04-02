@@ -50,7 +50,7 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
   // Función sortNumbersAscending: Ordenar un array de números de forma ascendente
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con los números ordenados de forma ascendente
-  const sortNumbersAscending = () => {
+  const sortNumbersAscending = (numeros) => {
     
   };
   
