@@ -33,10 +33,11 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
   // Función toUpperCaseStrings: Convertir un array de strings a mayúsculas
   // Parámetros: array (Array) - Un array de strings
   // Devuelve: Array - Un nuevo array con todas las strings convertidas a mayúsculas
-  
-  const toUpperCaseStrings = () => {
-    
-  };
+  let cadena = ["maria","juan","carro","perro"]
+  const toUpperCaseStrings = cadena.toUpperCaseStrings(palabra => {
+    return palabra
+  });
+  console.log(cadena);
 
   
   // Función calculateAverage: Calcular el promedio de un array de números
