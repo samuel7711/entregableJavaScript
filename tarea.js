@@ -2,29 +2,38 @@
 // Función sumArray: Suma de todos los elementos de un array
 // Parámetros: array (Array) - Un array de números
 // Devuelve: Number - La suma de todos los elementos del array
-let numeros = [23,56,79,400,100]
+let numeros = [23,56,79,400,100,44,67,24]
 const sumArray = numeros.reduce((numero1,numero2)=> {
     suma = numero1+numero2;
   });
+  console.log(sumArray);    
   
   // Función filterEvenNumbers: Filtrar números pares de un array
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Array - Un nuevo array con solo los números pares del array original
-  const filtro =["ferrari 488 spider","mclaren","lamborgini"," ferrari la ferrari","jesko","porche gt3rs"]
-  const filterEvenNumbers = () => {
-    
-  };
+
+  const filterEvenNumbers = numeros.filter(numero => {
+    if (numero/2 == 0){
+        par = numero
+    }
+    console.log(numero);
+  });
   
   // Función findMaxNumber: Encontrar el mayor número en un array
   // Parámetros: array (Array) - Un array de números
   // Devuelve: Number - El mayor número en el array
-  const findMaxNumber = () => {
-    
-  };
+  const findMaxNumber = numeros.find(numero => {
+    if (numero>=0){
+        max=numero
+    }
+    return numero
+  });
+  console.log(findMaxNumber);
   
   // Función toUpperCaseStrings: Convertir un array de strings a mayúsculas
   // Parámetros: array (Array) - Un array de strings
   // Devuelve: Array - Un nuevo array con todas las strings convertidas a mayúsculas
+  
   const toUpperCaseStrings = () => {
     
   };
