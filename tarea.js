@@ -392,14 +392,23 @@ class Bicicleta extends Vehiculo {
      * @param {string} frenos - El tipo de frenos de la bicicleta (disco, v-brake, caliper, etc.).
      * @param {string} tipoManubrio - El tipo de manubrio de la bicicleta (recto, curvo, doble altura, etc.).
      */
-  
+    constructor(marca,modelo,año,tipo,numMarchas,material,suspencion,frenos,tipoManubrio){
+        super(marca,modelo,año);
+        this.tipo="montaña";
+        this.numMarchas=4;
+        this.material="carbono";
+        this.suspencion="telescopico";
+        this.frenos="disco";
+        this.tipoManubrio="amplio";
+    }
 
     /**
      * Método para obtener la información de la bicicleta.
      * @returns {string} - La información de la bicicleta en formato de cadena de texto.
      */
     obtenerInformacion() {
-        
+        console.log(" la marca, modelo y año de la bicicleta es "+this.marca+this.modelo+this.año+" es de tipo "+this.tipo+" tiene una cantidad de marchas de "+this.numMarchas+
+        " esta hecha de "+this.material+" con una suspencion "+this.suspencion+" tiene frenos de "+this.frenos+ " y tiene un manubrio "+this.tipoManubrio);
     }
 }
 
