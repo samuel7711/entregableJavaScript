@@ -179,8 +179,9 @@ console.log(buscarPeliculas);
 // Retorna:
 // - Un número que representa el promedio de puntajes de todas las películas.
 const calcularPromedioPuntajes = (peliculas) => {
-    let prom=peliculas.puntaje.reduce(acu+val)/2;
-   return prom;
+    let prom=peliculas.puntaje.reduce(acu+val);
+    prome = prom/2;
+   return prome;
 };
 console.log(prom);
 
