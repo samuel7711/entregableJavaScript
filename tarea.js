@@ -6,7 +6,7 @@ let numeros = [23,56,79,400,100,44,67,24]
 const sumArray = numeros.reduce((numero1,numero2)=> {
     suma = numero1+numero2;
   });
-  console.log(sumArray);    
+  return sumArray;    
   
   // Función filterEvenNumbers: Filtrar números pares de un array
   // Parámetros: array (Array) - Un array de números
@@ -16,7 +16,7 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
     if (numero/2 == 0){
         par = numero
     }
-    console.log(numero);
+    return numero;
   });
   
   // Función findMaxNumber: Encontrar el mayor número en un array
@@ -26,9 +26,9 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
     if (numero>=0){
         max=numero
     }
-    return numero
+    return numero;
   });
-  console.log(findMaxNumber);
+  return findMaxNumber);
   
   // Función toUpperCaseStrings: Convertir un array de strings a mayúsculas
   // Parámetros: array (Array) - Un array de strings
@@ -37,7 +37,7 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
   const toUpperCaseStrings = cadena.toUpperCaseStrings(palabra => {
     return palabra
   });
-  console.log(cadena);
+  return cadena;
 
   
   // Función calculateAverage: Calcular el promedio de un array de números
@@ -81,7 +81,7 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
     let tamaño = numeros.length();
     return tamaño
   };
-  console.log(countElements);
+    return countElements;
 
   // Función concatenateArrays: Concatenar dos arrays
   // Parámetros: 
@@ -92,7 +92,7 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
     let array= numeros.concat(cadena);
     return array;
   };
-  console.log(array);
+  return array;
   
   // Función squareNumbers: Calcular el cuadrado de cada número en un array
   // Parámetros: array (Array) - Un array de números
@@ -101,7 +101,7 @@ const sumArray = numeros.reduce((numero1,numero2)=> {
     let cuadrado= numeros.map( num = numero^2)
     return cuadrado;
   };
-  console.log(squareNumbers);
+  return squareNumbers;
 
   // Función flecha para agregar habilidades a un jugador de un juego
 const agregarHabilidad = (jugador, nuevaHabilidad) => {
@@ -155,7 +155,7 @@ const calcularDuracionTotal = (peliculas) => {
     // Retornar la duración total
     return duracionTotal;
 };
-console.log(calcularDuracionTotal);
+
 
 
 // Función para buscar películas por título y género.
@@ -171,7 +171,7 @@ const buscarPeliculas = (peliculas, titulo, genero) => {
     })
     return
 };
-console.log(buscarPeliculas);
+return buscarPeliculas;
 
 // Función para calcular el promedio de puntajes de las películas.
 // Parámetros:
@@ -183,7 +183,7 @@ const calcularPromedioPuntajes = (peliculas) => {
     prome = prom/2;
    return prome;
 };
-console.log(prom);
+return prom;
 
 // Función para filtrar películas por año de lanzamiento.
 // Parámetros:
@@ -196,7 +196,7 @@ const filtrarPorAño = (peliculas, año) => {
     let año = peliculas.año.filter("20")
     return año;
 };
-console.log(filtrarPorAño);
+return filtrarPorAño;
 
 // Función para calcular el promedio de duración de las películas por género.
 // Parámetros:
@@ -211,7 +211,7 @@ const calcularPromedioDuracionPorGenero = (peliculas, genero) => {
     let prom = sum/peliculas.gene.length();
     return prom;    
 };
-console.log(calcularPromedioDuracionPorGenero);
+return calcularPromedioDuracionPorGenero;
 
 // Clase base que representa un vehículo
 class Vehiculo {
@@ -232,7 +232,7 @@ class Vehiculo {
      * @returns {string} - La información del vehículo en formato de cadena de texto.
      */
     obtenerInformacion() {
-        return console.log("el vehiculo es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año)
+        return "el vehiculo es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año
     }
 }
 
@@ -268,9 +268,9 @@ class Automovil extends Vehiculo {
      * @returns {string} - La información del automóvil en formato de cadena de texto.
      */
     obtenerInformacion() {
-        console.log("el vehiculo es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
+        return "el vehiculo es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
         this.color+",nuumero de puertas "+this.numPuertas+" cantidad de asientos"+this.numAsientos+" con una cilindrada de "+this.cilindrada+
-        " con una potencia de "+ this.potencia+" con el tipo de transmision"+this.tipoTransmision);
+        " con una potencia de "+ this.potencia+" con el tipo de transmision"+this.tipoTransmision ;
     }
 }
 
@@ -303,9 +303,9 @@ class Motocicleta extends Vehiculo {
      * @returns {string} - La información de la motocicleta en formato de cadena de texto.
      */
     obtenerInformacion() {
-        console.log("la moto es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
+        return "la moto es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
         this.color+",nuumero de puertas "+this.numPuertas+" cantidad de asientos"+this.numAsientos+" con una cilindrada de "+this.cilindrada+
-        " con una potencia de "+ this.potencia+" es un vehiculo con "+this.numRuedas+" ruedas");
+        " con una potencia de "+ this.potencia+" es un vehiculo con "+this.numRuedas+" ruedas";
     }
 }
 
@@ -338,9 +338,9 @@ class Camion extends Vehiculo {
      * @returns {string} - La información del camión en formato de cadena de texto.
      */
     obtenerInformacion() {
-        console.log("el vehiculo es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
+        return "el vehiculo es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como "+
         this.color+",es de carroceria "+this.tipoCarroceria+" tiene una cantidad de "+this.numEjes+" ejes,con una cilindrada de "+this.cilindrada+
-        " con una potencia de "+ this.potencia+" tiene una capacidad de carga de "+this.capacidadCarga);
+        " con una potencia de "+ this.potencia+" tiene una capacidad de carga de "+this.capacidadCarga;
     }
 }
 
@@ -373,9 +373,9 @@ class Autobus extends Vehiculo {
      * @returns {string} - La información del autobús en formato de cadena de texto.
      */
     obtenerInformacion() {
-        console.log("el autobus es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como el color que es "+
+        return "el autobus es de la marca "+this.marca+" y es modelo "+this.modelo+" y del año "+this.año+"tiene caracteristicas como el color que es "+
         this.color+" con una cilindrada de "+this.cilindrada+" con una potencia de "+ this.potencia+" con el tipo de combustible"+this.tipoCombustible+" un motor "+this.tipoMotor+
-        " con la capacidad de pasajeros de "+ this.capacidadPasajeros);
+        " con la capacidad de pasajeros de "+ this.capacidadPasajeros ;
     }
 }
 
@@ -408,8 +408,8 @@ class Bicicleta extends Vehiculo {
      * @returns {string} - La información de la bicicleta en formato de cadena de texto.
      */
     obtenerInformacion() {
-        console.log(" la marca, modelo y año de la bicicleta es "+this.marca+this.modelo+this.año+" es de tipo "+this.tipo+" tiene una cantidad de marchas de "+this.numMarchas+
-        " esta hecha de "+this.material+" con una suspencion "+this.suspencion+" tiene frenos de "+this.frenos+ " y tiene un manubrio "+this.tipoManubrio);
+       return " la marca, modelo y año de la bicicleta es "+this.marca+this.modelo+this.año+" es de tipo "+this.tipo+" tiene una cantidad de marchas de "+this.numMarchas+
+        " esta hecha de "+this.material+" con una suspencion "+this.suspencion+" tiene frenos de "+this.frenos+ " y tiene un manubrio "+this.tipoManubrio;
     }
 }
 
